@@ -1,0 +1,203 @@
+/* General Styles */
+.search-results-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.search-results-page h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Grid Layout for Listings */
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual Search Result Card */
+.search-listing-card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background-color: #fff;
+  border: 2px solid #a9a9a9;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 5px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.search-listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Listing Image */
+.search-listing-img {
+  /* width: 250px; */
+  width: 100%;
+  max-width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Listing Information */
+.search-listing-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.search-listing-info h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #000;
+}
+
+.search-listing-info p {
+  font-size: 1.1em;
+  color: var(--color-success);
+}
+
+.search-listing-details {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-listing-title {
+  font-size: 1.2em;
+  line-height: 1.3;
+  height: 2.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+/* Error Message */
+.error-message {
+  font-size: 1.2em;
+  color: red;
+  font-weight: bold;
+}
+
+
+@media (min-width: 1280px) {
+  .search-results-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .search-results-page {
+    margin-top: 150px;
+  }
+}
+
+
+
+@media (max-width: 1280px) {
+  .search-results-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .search-results-page {
+    margin-top: 150px;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .search-results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .search-results-grid {
+    gap: 15px;
+  }
+
+  .search-listing-card {
+      border-radius: 8px;
+  }
+
+  .search-listing-img {
+      height: 150px;
+  }
+
+  .search-listing-info {
+      padding: 10px;
+  }
+
+  .search-listing-info h2 {
+      font-size: 1.1em;
+  }
+
+  .search-listing-info p {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 760px) {
+  .search-results-page{
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+  .search-results-page {
+      padding: 20px;
+      margin-right: 0px;
+      margin-top: 0;
+  }
+
+  .search-results-page h1 {
+    font-size: 28px;
+  }
+
+  .search-results-grid {
+      /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+
+  .search-listing-img {
+    min-height: 120px;
+    max-height: 150px;
+  }
+
+  .search-listing-info {
+      padding: 5px;
+  }
+
+  .search-listing-info h2 {
+      font-size: 1em;
+  }
+
+  .search-listing-info p {
+      font-size: 0.9em;
+  }
+}

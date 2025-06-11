@@ -1,0 +1,120 @@
+/* Footer Styling */
+.custom-footer {
+  background: linear-gradient(to right, #004887, #006B94, #00CBB9);
+  color: #ffffff;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 100%;
+  
+}
+
+.custom-footer-left {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+
+.custom-footer-text {
+  margin: 0;
+}
+
+
+/* Footer Icons for Mobile */
+.custom-footer-icons {
+  display: none !important;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.footer-icon {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease-in-out;
+  flex: 1; /* Ensures equal spacing */
+  min-width: 50px; /* Prevents icons from collapsing */
+  text-align: center;
+}
+
+.footer-icon:hover {
+  color: #38b000; 
+}
+
+.footer-icon.active {
+  color: #1E90FF; 
+}
+
+.custom-footer-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-footer-links a {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.custom-footer-links a:focus {
+  color: black; 
+  font-weight: bold;
+
+}
+
+
+
+/* Center footer content on small screens */
+
+@media (max-width: 768px) {
+  .custom-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .custom-footer-left {
+    display: none; 
+  }
+
+  .custom-footer-icons {
+    display: flex !important;
+    justify-content: space-around;
+  }
+
+}
+
+/* Screens ≤ 460px */
+@media (max-width: 460px) {
+  .footer-icon {
+    font-size: 1.2rem; 
+  }
+
+  .custom-footer-icons {
+    padding: 8px; 
+    gap: 10px; 
+  }
+
+  a.footer-icon {
+    margin-left: 0px;
+  }
+}
+
+/*  Screens ≤ 360px */
+@media (max-width: 360px) {
+  .footer-icon {
+    font-size: 1rem; 
+  }
+
+  .custom-footer-icons {
+    gap: 8px; 
+  }
+}

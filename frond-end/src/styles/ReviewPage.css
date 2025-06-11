@@ -1,0 +1,157 @@
+.review-page {
+  width: 100%;
+  /* margin: 40px auto; */
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-page h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.review-form-group input,
+.review-form-group select,
+.review-form-group textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.review-form-group textarea {
+  resize: vertical;
+}
+
+.review-rating-stars {
+  display: flex;
+  gap: 5px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.review-rating-stars .review-star {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.review-rating-stars .review-star.selected {
+  color: gold;
+}
+
+.review-btn-submit {
+  padding: 10px 20px;
+  background: #0daf96;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review-btn-submit:hover {
+  background: #106f60;
+}
+
+.review-btn-cancel {
+  padding: 10px 20px;
+  background: #ccc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review-star {
+  font-size: 24px;
+}
+
+@media (max-width: 1280px) {
+  .review-page {
+    /* padding: px; */
+    /* margin: 20px auto; */
+    width: 100%; 
+    margin-top: 150px;
+  }
+
+  .review-star {
+    font-size: 28px; 
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .review-page {
+    /* padding: px; */
+    /* margin: 20px auto; */
+    width: 100%; 
+    margin-top: 130px;
+  }
+
+  .review-page h1 {
+    font-size: 1.8em; 
+  }
+
+  .review-form {
+    gap: 10px; 
+  }
+
+  .review-rating-stars {
+    font-size: 1.2em; 
+  }
+
+  .review-btn-submit {
+    font-size: 0.9em; 
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 760px) {
+  .review-page {
+    width: 100%;
+    margin-top: 0; 
+  }
+}
+
+
+@media (max-width: 560px) {
+  .review-page {
+    width: 100%;
+    margin-top: 0; 
+  }
+
+  .review-page h1 {
+    font-size: 1.8em; 
+  }
+
+  .review-form {
+    gap: 10px; 
+  }
+
+  .review-rating-stars {
+    font-size: 1.2em; 
+  }
+
+  .review-btn-submit {
+    font-size: 0.9em; 
+    padding: 8px 15px;
+  }
+}

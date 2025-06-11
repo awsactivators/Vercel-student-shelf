@@ -1,0 +1,528 @@
+/* General Header Styling */
+.custom-header {
+  background-color: #222;
+  color: #ffffff;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* position: relative; */
+  position: fixed;
+  z-index: 1000;
+  max-width: 100%;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.custom-logo-img {
+  width: 70px;
+  height: 70px;
+  margin-left: 30px;
+  border-radius: 50%;
+}
+
+/* Menu Icon (Replacing Logo) */
+.menu-icon-container {
+  display: none;
+}
+
+.menu-icon svg.svg-inline--fa {
+  width: 45px;
+  height: 45px;
+}
+
+
+.custom-nav {
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-nav-link {
+  margin: 0 35px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-nav-link:hover {
+  color: #1E90FF; 
+}
+
+.custom-nav-link.active {
+  color: #1E90FF; 
+  font-weight: bold;
+  border-bottom: 2px solid #1E90FF;
+}
+
+
+
+/* Menu Icon Styling */
+.menu-icon-container {
+  display: none;
+  align-items: center;
+}
+
+
+
+/* Container for Bell and Search */
+.search-bell-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+/* When Search is Expanded */
+.search-bell-container.expanded .notification-container {
+  margin-right: 10px; 
+}
+
+.notification-container {
+  margin-right: 20px; 
+  transition: margin 0.3s ease;
+}
+
+/* Adjust Search Box */
+.custom-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  transition: width 0.3s ease;
+  margin-right: 30px;
+}
+
+.custom-search-input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  flex: 1;
+  color: #000;
+  background: none;
+  margin-right: 10px;
+}
+
+.custom-search-input::placeholder {
+  color: #716f6f;
+}
+
+.custom-search-cancel {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+
+.custom-search-container.active {
+  width: 300px; 
+}
+
+.custom-search-icon {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-search-icon:hover {
+  transform: scale(1.2);
+}
+
+.custom-search-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 30px;
+}
+
+.custom-search-submit {
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+/* Notification Bell */
+.notification-container {
+  position: relative;
+}
+
+.notification-bell {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search Bar for Small Screens */
+.search-bar {
+  display: none; 
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  position: absolute;
+}
+
+.search-input {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8d8d8d;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  outline: none; 
+  border-color: #1E90FF; 
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5); 
+}
+
+
+
+/********************************************************/
+
+/* Media Query for max-width: 1047px */
+@media (max-width: 1047px) {
+  .custom-header {
+    height: 150px;
+  }
+
+  .search-bell-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: flex-end; 
+    margin: 15px 15px 15px 0; 
+    
+  }
+
+  .custom-nav {
+    flex: 1;
+    justify-content: center;
+    margin-top: 45px;
+  }
+
+  .custom-logo {
+    flex: 0 0 auto;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .custom-search-box {
+    margin-right: 0;
+  }
+}
+
+
+
+/* Media Query for max-width: 805px */
+@media (max-width: 805px) {
+  /* Adjust Header */
+  .custom-header {
+    width: 100%;
+    height: 130px;
+  }
+
+  /* Adjust Main Body */
+  .main-container {
+    padding: 10px;
+    text-align: center; 
+  }
+
+  .container-fluid {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .custom-logo-img {
+    display: none;
+  }
+
+  /* Display menu icon */
+  .menu-icon-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: block;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .custom-nav-link {
+    display: none; 
+  }
+
+  .custom-search-box {
+    margin-right: 0;
+  }
+
+  .mobile-sidebar.open {
+    left: 0; /* Align sidebar with the menu icon on the left */
+  }
+
+  .search-bell-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: width 0.3s ease;
+    margin-right: 0;
+    gap: 20px;
+  }
+
+  .notification-container {
+    margin: 0;
+  }
+
+  .notification-container svg.svg-inline--fa {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* Media Query for max-width: 768px */
+@media (max-width: 768px) {
+  .custom-header {
+    justify-content: flex-start;
+  }
+
+  .search-bar {
+    display: block; 
+    position: unset;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  div.search-bar {
+    margin-bottom: 0px;
+  }
+
+  .search-input {
+    display: block;
+  }
+
+  .custom-search-icon {
+    display: none;
+  }
+
+  .custom-logo-img {
+    display: flex;
+    margin-left: 15px;
+  }
+
+  .custom-logo {
+    display: flex;
+    align-items: center;
+    /* margin-left: 15px; */
+  }
+
+  .mobile-sidebar.open {
+    display: none; 
+   }
+
+   .menu-icon {
+    display: none;
+  }
+
+  .menu-icon-container {
+    position: absolute;
+    left: 15px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .custom-header {
+    height: 110px;
+  }
+  .custom-logo {
+    margin: 0; 
+  }
+
+  .custom-logo-img {
+    margin: 0; 
+  }
+}
+
+
+
+/* Media Query for max-width: 540px */
+@media (max-width: 540px) {
+
+  .custom-search-container.expanded, .custom-search-container.active, .custom-search-box {
+    margin: 0;
+  }
+
+}
+
+
+
+/* Media Query for max-width: 500px */
+@media (max-width: 500px) {
+  .search-bell-container.expanded {
+    width: 300px;
+  }
+
+  .search-bell-container.expanded .notification-container svg.svg-inline--fa{
+    width: 30px;
+    height: 30px;
+  }
+
+  .custom-search-container, .notification-bell {
+    margin-right: 0;
+  }
+
+  .notification-container {
+    margin-left: 20px;
+  }
+
+
+  .custom-search-box {
+    margin-right: 10px;
+  }
+
+}
+
+
+/* Media Query for max-width: 430px */
+@media (max-width: 430px) {
+  .custom-search-container.active {
+    width: 240px;
+  }
+
+  .notification-container svg.svg-inline--fa{
+    margin-right: 10px;
+  }
+
+  .notification-bell {
+    margin-left: -20px;
+  }
+  
+  .custom-logo-img {
+    margin: 0; 
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+/* Media Query for max-width: 414px */
+@media (max-width: 414px) {
+  .custom-search-container.active {
+    width: 230px;
+  }
+
+  .notification-container svg.svg-inline--fa{
+    margin-right: 10px;
+  }
+
+  .notification-bell {
+    margin-left: -20px;
+  }
+}
+
+
+
+/* Media Query for max-width: 375px */
+@media (max-width: 375px) {
+  .custom-search-container.active {
+    width: 220px;
+  }
+
+  .notification-container svg.svg-inline--fa{
+    margin-right: 10px;
+  }
+
+  .notification-bell {
+    margin-left: -20px;
+  }
+}
+
+
+
+/* Media Query for max-width: 360px */
+@media (max-width: 360px) {
+  .custom-search-container.active {
+    width: 210px;
+  }
+
+  .notification-container svg.svg-inline--fa, .notification-dot{
+    margin-right: 25px;
+  }
+
+  .notification-bell {
+    margin-left: -35px;
+  }
+}
+
+
+
+/* Media Query for max-width: 345px */
+@media (max-width: 345px) {
+  .custom-search-container.active {
+    width: 200px;
+  }
+
+  .notification-container svg.svg-inline--fa{
+    margin-left: -25px;
+    margin-right: 30px;
+  }
+
+  .notification-dot {
+    margin-right: 30px;
+  }
+
+}
+
+
+
+/* Media Query for min-width: 1024px */
+@media (min-width: 1024px) {
+  .custom-search-container.active {
+    width: 250px;
+  }
+
+  .custom-search-container, .notification-bell {
+    margin-right: 0;
+  }
+
+  .notification-container svg.svg-inline--fa, .notification-dot{
+    margin-right: 15px;
+  }
+}
