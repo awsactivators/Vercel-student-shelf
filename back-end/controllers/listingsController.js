@@ -35,6 +35,8 @@ const createListing = asyncHandler(async (req, res) => {
     : imagePaths[0];
 
 
+  console.log("Create listing File from Cloudinary:", req.file);
+
   // Save listing to database
   const listing = await Listing.create({
     title,
@@ -184,11 +186,11 @@ const updateListing = asyncHandler(async (req, res) => {
 
 
   
-  if (req.files && req.files.coverImage) {
-    updatedCoverImage = `/uploads/listings/${req.files.coverImage[0].filename}`;
-  } else if (coverImage && typeof coverImage === "string") {
-    updatedCoverImage = coverImage;
-  }
+  // if (req.files && req.files.coverImage) {
+  //   updatedCoverImage = `/uploads/listings/${req.files.coverImage[0].filename}`;
+  // } else if (coverImage && typeof coverImage === "string") {
+  //   updatedCoverImage = coverImage;
+  // }
 
   // Update listing data
   await listing.update({

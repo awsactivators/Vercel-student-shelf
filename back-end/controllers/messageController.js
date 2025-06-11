@@ -37,6 +37,8 @@ const sendMessage = async (req, res) => {
   // const imageFile = req.file ? req.file.filename : null;
   const imageFile = req.file ? req.file.path : null; 
 
+  console.log("send message File from Cloudinary:", req.file);
+
   global.io.to(`user_${receiverId}`).emit('newMessage', {
     senderId,
     receiverId,

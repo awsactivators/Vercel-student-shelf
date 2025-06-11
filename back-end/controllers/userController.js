@@ -194,6 +194,8 @@ const uploadProfileImage = asyncHandler(async (req, res) => {
 
   // Use Cloudinary URL directly
   user.profileImage = req.file.path;
+
+  console.log("Uploaded File from Cloudinary:", req.file);
   await user.save();
 
   res.json({
