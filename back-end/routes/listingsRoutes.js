@@ -65,11 +65,11 @@ router.get("/:id", protect, getListingById);
 // Delete a listing
 router.delete("/:id", protect, deleteListing);
 
-// Update a listing
-router.put("/:id", protect, listingUpload.fields([
-  { name: "images", maxCount: 3 }, 
-  { name: "coverImage", maxCount: 1 }
-]), updateListing);
+// // Update a listing
+// router.put("/:id", protect, listingUpload.fields([
+//   { name: "images", maxCount: 3 }, 
+//   { name: "coverImage", maxCount: 1 }
+// ]), updateListing);
 
 // Search 
 router.get("/search", searchListings);
