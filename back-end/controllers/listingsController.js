@@ -23,12 +23,6 @@ const createListing = asyncHandler(async (req, res) => {
     throw new Error("At least one image is required!");
   }
 
-  // Extract uploaded image paths
-  // let imagePaths = req.files["images"].map((file) => `/uploads/listings/${file.filename}`);
-
-  // Check for cover image separately
-  // const coverImagePath = req.files["coverImage"] ? `/uploads/listings/${req.files["coverImage"][0].filename}` : imagePaths[0];
-
   const imagePaths = req.files["images"].map((file) => file.path);
   const coverImagePath = req.files["coverImage"]
     ? req.files["coverImage"][0].path

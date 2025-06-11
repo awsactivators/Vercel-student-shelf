@@ -129,7 +129,7 @@ function SellerListingDetailsPage() {
           </div>
           <div className="sellerdet-thumbnail-images">
             {listing.images.map((image, index) => (
-              <img key={index} src={`${API_URL}${image}`} alt={`Thumbnail ${index + 1}`} onClick={() => openModal(index)} />
+              <img key={index} src={image} alt={`Thumbnail ${index + 1}`} onClick={() => openModal(index)} />
             ))}
           </div>
         </div>

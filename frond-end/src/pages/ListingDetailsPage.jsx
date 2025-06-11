@@ -169,7 +169,7 @@ function ListingDetailsPage() {
             {listing.images.map((image, index) => (
               <img
                 key={index}
-                src={`${API_URL}${image}`}
+                src={image}
                 alt={`Thumbnail ${index + 1}`}
                 onClick={() => openModal(index)}
               />
