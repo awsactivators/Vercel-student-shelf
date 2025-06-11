@@ -193,7 +193,7 @@ function ListingsPage() {
                       onClick={() => navigate(`/listing/${listing.id}`, { state: { from: "/listings" } })}
                     >
                       <img
-                        src={listing.coverImage ? `${API_URL}${listing.coverImage}` : ""}
+                        src={listing.coverImage || ""}
                         alt={listing.title}
                         className="listing-img"
                       />

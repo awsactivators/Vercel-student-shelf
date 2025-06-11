@@ -163,7 +163,7 @@ function ListingDetailsPage() {
 
         <div className="search-images-section">
           <div className="search-cover-image">
-            <img src={`${API_URL}${listing.coverImage}`} alt="Main Listing" onClick={() => openModal(0)} />
+            <img src={listing.coverImage} alt="Main Listing" onClick={() => openModal(0)} />
           </div>
           <div className="search-thumbnail-images">
             {listing.images.map((image, index) => (
