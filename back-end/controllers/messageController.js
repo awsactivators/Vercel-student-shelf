@@ -16,14 +16,16 @@ const getMessages = async (req, res) => {
     });
 
 
-    const messagesWithFullImagePath = messages.map(msg => ({
-      ...msg.toJSON(),
-      imageUrl: msg.imageUrl
-        ? `${req.protocol}://${req.get('host')}/uploads/messages/${msg.imageUrl}`
-        : null
-    }));
+    // const messagesWithFullImagePath = messages.map(msg => ({
+    //   ...msg.toJSON(),
+    //   imageUrl: msg.imageUrl
+    //     ? `${req.protocol}://${req.get('host')}/uploads/messages/${msg.imageUrl}`
+    //     : null
+    // }));
 
-    res.json(messagesWithFullImagePath);
+    // res.json(messagesWithFullImagePath);
+
+    res.json(messages);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
@@ -32,7 +34,8 @@ const getMessages = async (req, res) => {
 
 const sendMessage = async (req, res) => {
   const { senderId, receiverId, text } = req.body;
-  const imageFile = req.file ? req.file.filename : null;
+  // const imageFile = req.file ? req.file.filename : null;
+  const imageFile = req.file ? req.file.path : null; 
 
   global.io.to(`user_${receiverId}`).emit('newMessage', {
     senderId,
