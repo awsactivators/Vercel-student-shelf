@@ -70,6 +70,8 @@ function ListingsPage() {
   const startIndex = (currentPage - 1) * listingsPerPage;
   const endIndex = startIndex + listingsPerPage;
   const currentListings = (filteredListings.length > 0 ? filteredListings : listings).slice(startIndex, endIndex);
+  const [flashMessage, setFlashMessage] = useState("");
+  const [flashType, setFlashType] = useState("success"); // "success" or "error"
 
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
@@ -114,13 +116,17 @@ function ListingsPage() {
       if (response.ok) {
         setListings((prev) => prev.filter((listing) => listing.id !== listingToDelete));
         setFilteredListings((prev) => prev.filter((listing) => listing.id !== listingToDelete));
-        alert("Listing deleted successfully");
+        setFlashMessage("Listing deleted successfully");
+        setFlashType("success");
       } else {
         const data = await response.json();
-        alert(`Error deleting listing: ${data.message}`);
+        setFlashMessage(`Error deleting listing: ${data.message}`);
+        setFlashType("error");
       }
+      setTimeout(() => setFlashMessage(""), 4000);
     } catch (error) {
-      alert("Failed to delete listing. Please try again.");
+      setFlashMessage("Failed to delete listing. Please try again.");
+      setFlashType("error");
     } finally {
       setShowDeleteModal(false);
       setListingToDelete(null);
@@ -164,7 +170,13 @@ function ListingsPage() {
             <option value="service">Service</option>
           </select>
         </div>
-  
+
+        {flashMessage && (
+          <div className={`flash-message ${flashType}`}>
+            {flashMessage}
+          </div>
+        )}
+          
         {/* Determine active dataset */}
         {loading ? (
           <p>Loading listings...</p>
