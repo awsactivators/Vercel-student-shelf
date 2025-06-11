@@ -113,6 +113,8 @@ function ListingsPage() {
 
       if (response.ok) {
         setListings((prev) => prev.filter((listing) => listing.id !== listingToDelete));
+        setFilteredListings((prev) => prev.filter((listing) => listing.id !== listingToDelete));
+        alert("Listing deleted successfully");
       } else {
         const data = await response.json();
         alert(`Error deleting listing: ${data.message}`);
