@@ -184,6 +184,7 @@ const updateListing = asyncHandler(async (req, res) => {
     updatedCoverImage = coverImage;
   }
 
+  console.log("Update listing File from Cloudinary:", req.file);
 
   
   // if (req.files && req.files.coverImage) {
